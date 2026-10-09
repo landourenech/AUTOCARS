@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #ffff;
+    color: rgb(22, 21, 21);
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Aligne verticalement le titre et le menu */
+    padding: 1rem 2rem;
+    z-index: 10; /* Augmenté pour rester au-dessus du fond bleu */
+    position: absolute;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav ul li a {
+    color: rgb(30, 30, 30);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SECTION HERO MODIFIÉE */
+.hero {
+    position: relative; /* Indispensable pour positionner les éléments enfants */
+    display: flex;
+    padding: 20rem 2rem;
+    justify-content: space-between; /* Pour que le texte et l'image soient aux extrémités */    
+    align-items: center;
+    height: 40vh;
+    overflow: hidden; /* Évite que l'image ne dépasse */
+    flex-direction: column; /* Pour que le texte soit centré verticalement */
+   
+}
+.hero h2 {
+    font-size:40px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.hero p {
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* CONTENEUR DE L'IMAGE AVEC EFFET BLEU NUIT */
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* L'image s'adapte à tout l'écran sans se déformer */
+}
+
+/* LE FILTRE BLEU NUIT SUPERPOSÉ */
+.hero-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradient linéaire bleu nuit transparent (rgba: Rouge, Vert, Bleu, Opacité) */
+    background: linear-gradient(rgba(11, 29, 58, 0.75), rgba(11, 29, 58, 0.85));
+}
+
+/* TEXTE PAR-DESSUS LE BLEU NUIT */
+.hero-content {
+    position: relative; /* Changé de absolute à relative pour un meilleur comportement */
+    max-width: 600px;
+    color: #ffffff; /* Texte blanc pour ressortir sur le bleu nuit */
+    z-index: 5; /* Reste au-dessus du filtre bleu nuit */
+    text-align: center;
+    padding: 0 1rem;
+}
+.hero-promesse {
+    position: relative;
+    z-index: 5;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: #ffffff; /* Texte blanc pour ressortir sur le bleu nuit */
+}
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.hero-promesse-item {
+   border: 1px solid #ffffff;
+    background-color: rgb(255, 0, 0);
+    width: 20%;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 50px;
+    padding: 10p 10px;
+}
+
+.voitures-container {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+}
+
+.voiture-card {
+    background-color: #fff;
+    border-radius: top 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+}
+.voiture-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+.voiture-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
