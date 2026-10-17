@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Admin — Celica</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Connexion -->
+  <section id="loginView" class="login">
+    <form id="loginForm">
+      <h1 class="logo" style="text-align:center">CELICA</h1>
+      <input id="pw" type="password" placeholder="Mot de passe" autocomplete="current-password" required>
+      <button class="btn btn-black">Se connecter</button>
+      <p id="loginErr" class="error"></p>
+      <a href="index.html" class="link-btn" style="text-align:center">← Retour au site</a>
+    </form>
+  </section>
+
+  <!-- Tableau de bord -->
+  <main id="dash" class="admin-wrap" hidden>
+    <div class="admin-top">
+      <h1>Admin · Produits</h1>
+      <div>
+        <a href="index.html" class="link-btn">Voir le site</a>
+        <button id="logout" class="link-btn">Déconnexion</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2 id="formTitle">Ajouter un produit</h2>
+      <form id="pForm" class="form">
+        <input type="hidden" id="pId">
+        <label>Nom <input id="pName" required></label>
+        <label>Catégorie
+          <select id="pType"><option>Voiture</option><option>Pièce</option></select>
+        </label>
+        <label>Modèle
+          <select id="pModel">
+            <option>A20/A30</option><option>A40/A50</option><option>A60</option>
+            <option>T160</option><option>T180</option><option>T200</option><option>T230</option>
+          </select>
+        </label>
+        <label>Année (voitures) <input id="pYear" type="number" min="1970" max="2006"></label>
+        <label>Prix (FCFA) <input id="pPrice" type="number" min="0" required></label>
+        <label>Stock <input id="pStock" type="number" min="0" value="1" required></label>
+        <label class="wide">Description <textarea id="pDesc" rows="3"></textarea></label>
+        <label class="wide">Image <input id="pImage" type="file" accept="image/*">
+          <img id="pPreview" class="preview" alt="" hidden>
+        </label>
+        <div class="actions">
+          <button class="btn btn-black" type="submit" id="saveBtn">Enregistrer</button>
+          <button class="btn" type="button" id="cancelBtn" hidden>Annuler</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="panel">
+      <h2>Liste des produits (<span id="count">0</span>)</h2>
+      <table>
+        <thead><tr><th></th><th>Nom</th><th class="hide-m">Type</th><th class="hide-m">Modèle</th><th>Prix</th><th>Stock</th><th></th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h2>Réglages</h2>
+      <form id="sForm" class="form">
+        <label>Numéro WhatsApp (format international, sans +) <input id="sWa" placeholder="24101234567"></label>
+        <label>Nouveau mot de passe <input id="sPw" type="password" placeholder="Laisser vide pour ne pas changer"></label>
+        <div class="actions"><button class="btn" type="submit">Enregistrer les réglages</button></div>
+      </form>
+      <p class="note" style="margin-top:14px">Données stockées dans ce navigateur (IndexedDB). Mot de passe par défaut : celica2026 — changez-le.</p>
+    </div>
+  </main>
+
+  <script src="js/db.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

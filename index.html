@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Celica — Voitures & pièces Toyota Celica</title>
+  <meta name="description" content="Plateforme spécialisée dans la vente de Toyota Celica et de pièces détachées, tous modèles.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a href="#top" class="logo">CELICA</a>
+    <nav>
+      <a href="#modeles">Modèles</a>
+      <a href="#boutique">Boutique</a>
+      <a href="#contact">Contact</a>
+      <button id="cartBtn" class="cart-btn" aria-label="Ouvrir le panier">Panier <span id="cartCount">0</span></button>
+    </nav>
+  </header>
+
+  <!-- HERO : image en arrière-plan + texte (mettez votre photo dans img/hero.jpg) -->
+  <section id="top" class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Voitures & pièces — tous modèles</p>
+      <h1>Toyota Celica.<br>Une légende, à vendre.</h1>
+      <p class="lead">De la T18 à la T230, trouvez votre Celica et chaque pièce pour la garder sur la route.</p>
+      <a href="#boutique" class="btn btn-white">Voir la boutique</a>
+    </div>
+  </section>
+
+  <section id="modeles" class="section">
+    <h2>Tous les modèles</h2>
+    <ul class="models">
+      <li><strong>1970–77</strong><span>Première génération (A20/A30)</span></li>
+      <li><strong>1977–81</strong><span>Deuxième génération (A40/A50)</span></li>
+      <li><strong>1981–85</strong><span>Troisième génération (A60)</span></li>
+      <li><strong>1985–89</strong><span>Quatrième génération (T160)</span></li>
+      <li><strong>1989–93</strong><span>Cinquième génération (T180)</span></li>
+      <li><strong>1993–99</strong><span>Sixième génération (T200)</span></li>
+      <li><strong>1999–06</strong><span>Septième génération (T230)</span></li>
+    </ul>
+  </section>
+
+  <section id="boutique" class="section alt">
+    <h2>Boutique</h2>
+    <div class="filters">
+      <select id="fType" aria-label="Catégorie">
+        <option value="">Tout</option>
+        <option value="Voiture">Voitures</option>
+        <option value="Pièce">Pièces</option>
+      </select>
+      <select id="fModel" aria-label="Modèle">
+        <option value="">Tous les modèles</option>
+        <option>A20/A30</option><option>A40/A50</option><option>A60</option>
+        <option>T160</option><option>T180</option><option>T200</option><option>T230</option>
+      </select>
+      <input id="fSearch" type="search" placeholder="Rechercher…" aria-label="Rechercher">
+    </div>
+    <div id="grid" class="grid"></div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Une question, une pièce introuvable ? Écrivez-nous sur WhatsApp ou par e-mail.</p>
+    <p><a id="waLink" class="btn" href="#" target="_blank" rel="noopener">WhatsApp</a></p>
+  </section>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> Celica</span>
+    <a href="admin.html">Admin</a>
+  </footer>
+
+  <!-- Panier -->
+  <div id="overlay" class="overlay"></div>
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <h3>Votre panier</h3>
+      <button id="closeCart" class="icon-btn" aria-label="Fermer">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="drawer-foot">
+      <div class="total"><span>Total</span><strong id="cartTotal">0 FCFA</strong></div>
+      <button id="checkout" class="btn btn-black full">Commander via WhatsApp</button>
+      <button id="clearCart" class="link-btn">Vider le panier</button>
+    </div>
+  </aside>
+
+  <script src="js/db.js"></script>
+  <script src="js/shop.js"></script>
+</body>
+</html>
